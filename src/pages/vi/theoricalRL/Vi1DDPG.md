@@ -17,6 +17,7 @@ phần thưởng cao nhất trong suốt cả quá trình? Reinforcement Learnin
 các thuật toán để giải bài toán tối ưu này.
 
 Dưới đây là định nghĩa của các thuật ngữ hay xuất hiện trong RL:
+
 * _Environment_ <span class="tex2jax_ignore">(</span>môi trường<span class="tex2jax_ignore">)</span>: là không gian mà máy tương tác.
 * _Agent_ <span class="tex2jax_ignore">(</span>máy<span class="tex2jax_ignore">)</span>: máy quan sát môi trường và sinh ra hành động tương ứng.
 * _Policy_ <span class="tex2jax_ignore">(</span>chiến thuật<span class="tex2jax_ignore">)</span>: máy sẽ theo chiến thuật như thế nào để đạt được mục đích.
@@ -47,7 +48,8 @@ Xem ví dụ dưới đây từ openAI Gym, environment có tên
     <div>Hình 2: Một hình ảnh từ MountaincontinuousCar-v0.</div>
 </div>
 </br>
-* _Goal_: mục đích của bài toán là xây dựng policy để điều khiển xe lên đến được chỗ cắm cờ.
+
+* _Goal_ : mục đích của bài toán là xây dựng policy để điều khiển xe lên đến được chỗ cắm cờ.
 * _Environment_: dốc và xe chạy trong đó
 * _State_: trạng thái của xe có 2 dimension, tọa độ của xe theo trục $x$ và vận tốc của xe tại thời điểm đo.
 * _Action_: Lực được truyền cho xe để điều khiển, lực này không đủ mạnh
@@ -122,7 +124,7 @@ Tiếp tục xem xét gradient của hàm mục tiêu:
 
 $$
 \begin{eqnarray}
-\nabla_\theta J(\theta) &=& E_{\tau\sim p_\theta(\tau)}\\bigg[\sum_t r(a_t, s_t)\\bigg] \\\\
+\nabla_\theta J(\theta) &=& \nabla_\theta E_{\tau\sim p_\theta(\tau)}\\bigg[\sum_t r(a_t, s_t)\\bigg] \\\\
 &=& \int \nabla_\theta p_\theta(\tau) r(\tau) dr
 \end{eqnarray}
 $$
@@ -453,7 +455,7 @@ Thuật toán DDPG như sau:
 <br/>
 Lưu ý trong implement DDPG:
 - Vì action trong DDPG luôn là deterministic, do đó để có thể khám phá môi trường <span class="tex2jax_ignore">(</span>ta không muốn agent luôn khai khác chỉ 1 đường đi tốt nhất trong những đường đi mà nó biết, có thể có đường đi khác tốt hơn mà nó chưa biết<span class="tex2jax_ignore">)</span>, chúng ta sẽ thêm vào action một lượng noise nhỏ vào action.
-Lượng noise này trong [bài báo gốc](https://arxiv.org/abs/1509.02971) là một stochastic process có tên Ornstein–Uhlenbeck process <span class="tex2jax_ignore">(</span>OU process<span class="tex2jax_ignore">(</span>.
+Lượng noise này trong [bài báo gốc](https://arxiv.org/abs/1509.02971) là một stochastic process có tên Ornstein–Uhlenbeck process <span class="tex2jax_ignore">(</span>OU process<span class="tex2jax_ignore">)</span>.
 Người viết chọn process này vì khi làm thí nghiệm cho kết quả tôt, tuy nhiên một vài thí nghiệm khác sử dụng những noise khác như là 1
 Gaussian Noise thì cũng cho kết quả tương đương.
 - Implementation của action noise trong các thư viện như [keras-rl](https://github.com/keras-rl/keras-rl) là OU process, tuy nhiên khi chạy thử thì noise này không decay theo thời gian. Mà chúng ta cần noise lớn lúc ban đầu <span class="tex2jax_ignore">(</span>để khám phá môi trường nhiều<span class="tex2jax_ignore">)</span> sau đó giảm dần khi đã trải qua nhiều episode.

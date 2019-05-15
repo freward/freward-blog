@@ -1,16 +1,16 @@
 <template>
   <aside class="list-group">
     <ul>
-      <li><router-link to="/" class="list-group-item" exact>Lời mở đầu</router-link></li>
+      <li><router-link to="/vi" class="list-group-item" exact>Lời mở đầu</router-link></li>
       <!--<li><router-link to="/abc" class="list-group-item" exact>Giới thiệu</router-link></li>-->
     </ul>
     <div class="menu">
       <p class="menu-label">RL cơ bản</p>
       <ul class="menu-list">
         <li><router-link to="/vi/theorical/1" exact>DDPG</router-link></li>
-        <li><router-link to="/en/components/layout" exact>TRPO/PPO</router-link></li>
-        <li><router-link to="/en/components/button" exact>SAC</router-link></li>
-        <li><router-link to="/en/components/icon" exact>Inference</router-link></li>
+        <li><router-link to="/vi/theorical/2" exact>TRPO/PPO</router-link></li>
+        <li><router-link to="/vi/theorical/3" exact>SAC</router-link></li>
+        <li><router-link to="/vi/theorical/3" exact>Inference</router-link></li>
       </ul>
 
       <p class="menu-label">RL luyện tập</p>

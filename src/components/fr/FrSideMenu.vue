@@ -1,7 +1,7 @@
 <template>
   <aside class="list-group">
     <ul>
-      <li><router-link to="/" class="list-group-item" exact>Introduction</router-link></li>
+      <li><router-link to="/fr" class="list-group-item" exact>Introduction</router-link></li>
       <!--<li><router-link to="/abc" class="list-group-item" exact>À propos</router-link></li>-->
     </ul>
     <div class="menu">

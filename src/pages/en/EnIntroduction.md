@@ -1,11 +1,12 @@
+<vue-mathjax></vue-mathjax>
 # Introduction
 
 Besides the development of Computer Vision, Natural Language Processing,
 Reinforcement Learning also achieved suprising results in recent years
 and received much attention.
 However, tutorials found online often speed up to coding section without
- going deeply into math.
-This blog is based on a lecture given by Professor Sergey Levine of UC Berkeley
+going deeply into math.
+This blog is based on the lecture series given by Professor Sergey Levine of UC Berkeley
 and the Introduction to Reinforcement Learning book by Professor Sutton and Barto,
 You can find the link for the lecture
 [here](http://rail.eecs.berkeley.edu/deeprlcourse/)
@@ -15,10 +16,10 @@ This blog will also introduce RL libraries and how to use them.
 
 # About Frew<i class="fas fa-angle-double-up" ></i>rd
 In RL, reward is important, actions taken by the AI are to
-optimize the total reward in long-term and constructing a reward function so that it's reasonable
+optimize the long-term total reward and crafting a reasonable reward function
 is one of the essential conditions for RL algorithms to work. In reality,
-reward are also important, which is the goal we aim for in life.
-Reward function - \\(f(reward)\\) - Frew<i class="fas fa-angle-double-up" ></i>rd is from here.
+a reward is also important to motivate us toward the goal we are aiming for.
+Reward function - $f(reward)$ - Frew<i class="fas fa-angle-double-up" ></i>rd is from here.
 <br/>
 <br/>
 <br/>

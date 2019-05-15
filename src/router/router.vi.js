@@ -18,6 +18,9 @@ export default [
       children: [{
         path: '1',
         component: require('../pages/vi/theoricalRL/Vi1DDPG.md').default,
+      },{
+        path: '2',
+        component: require('../pages/vi/theoricalRL/Vi2TRPO.md').default,
       }],
     }
     ],

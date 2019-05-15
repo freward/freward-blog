@@ -21,10 +21,10 @@
                     </a>
                     <div class="navbar-dropdown is-boxed">
                         <a class="navbar-item">
-                            <router-link to="/"><span>Anglais</span></router-link>
+                            <router-link to="/"><span>English</span></router-link>
                         </a>
                         <a class="navbar-item">
-                            <router-link to="/vi"><span>Vietnamien</span></router-link>
+                            <router-link to="/vi"><span>Tiếng Việt</span></router-link>
                         </a>
                         <a class="navbar-item">
                             <router-link to="/fr"><span>Français</span></router-link>
@@ -61,7 +61,7 @@
           <div class="column is-2 side-nav">
             <side-menu></side-menu>
           </div>
-          <div class="column is-10 markdown">
+          <div class="column is-10 markdown" :key="latex">
             <router-view></router-view>
           </div>
         </div>
@@ -87,10 +87,27 @@
 </template>
 
 <script>
-import SideMenu from './FrSideMenu';
+import SideMenu from './FrSideMenu'
 export default {
   components: { SideMenu },
-};
+  methods: {
+    reRender () {
+      if (window.MathJax) {
+        window.MathJax.Hub.Queue(['Typeset', window.MathJax.Hub], () => console.log('done'))
+      }
+    }
+  },
+  mounted () {
+    this.reRender()
+  },
+  watch: {
+    latex: function () {
+      this.$nextTick().then(() => {
+        this.reRender()
+      })
+    }
+  }
+}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
