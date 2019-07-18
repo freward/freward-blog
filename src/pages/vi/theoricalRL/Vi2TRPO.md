@@ -12,7 +12,11 @@ Bạn đọc hãy để ý phần dấu $(\*)$. Xét tại 1 thời điểm bấ
 Do đó, thay vì ta lấy tổng reward từ $t=1$ đến $t=T$ thì ta chỉ nên tính tổng reward từ $t'=t$ đến $t=T$. Ta gọi đó là causality - quan hệ nhân quả.
 
 
-[Thêm hình ở đây]
+<div style="width:image width px; font-size:80%; text-align:center;">
+<img src="https://i.imgur.com/wBnMwQH.jpg" align="center"/>
+<div>Hình 1: 2 cách đi cho cùng total reward nhưng chọn $a_{t_2}$ tại $s_t$ thì tốt hơn.</div>
+</div>
+</br>
 
 Thêm causality thì sẽ giúp ích cho việc giảm variance cho thuật toán và chúng ta sẽ có 1 đánh giá chính xác hơn về hệ quả của các action. Xem xét ví dụ sau, giả sử có 2 trajectory <span class="tex2jax_ignore">(</span>cách đi<span class="tex2jax_ignore">)</span> như hình minh họa:
 - Cách 1 đi từ $s_1$ đến $s_t$ và nhận được tổng reward là 20, sau đó tại $s_t$ ta thực hiện hành động $a_{t_1}$, và từ đó cho đến kết thúc episode, ta nhận được reward là 10.
@@ -159,7 +163,7 @@ Bằng trực giác, ta có thể cảm nhận rằng, nếu $p_{\theta'}({s_t})
 
 # 3 - Tìm kiếm một bound thích hợp để thay đổi Policy
 
-# 3.1 - Trường hợp Deterministic Policy
+## 3.1 - Trường hợp Deterministic Policy
 
 Xét trường hợp các policy $\pi_\theta$ deterministic và $a_t = \pi_\theta(s_t)$. $\pi_{\theta'}$ được xem là gần với $\pi_\theta$ nếu ta có:
 
@@ -201,7 +205,7 @@ $$
 
 Tóm lại, nếu như 2 policy khác nhau 1 lượng ít hơn hoặc bằng $\epsilon$ thì phân bố của state $s_t$ khác nhau 1 lượng ít hơn hoặc bằng $\epsilon t$ với $t$ là timestep đang xét. Ta có thể thấy, mặc dù xác suất khác nhau của 2 policy luôn nhỏ hơn hoặc bằng $\epsilon$, nếu t càng tăng <span class="tex2jax_ignore">(</span>càng xa so với gốc<span class="tex2jax_ignore">)</span> thì bound về độ khác nhau của phân bố state $s_t$ càng tăng.
 
-# 3.2 - Trường hợp Stochastic Policy
+## 3.2 - Trường hợp Stochastic Policy
 
 Policy $\pi_\theta$ được xem là gần với policy $\pi_{\theta'}$ nếu:
 
@@ -256,9 +260,9 @@ Ta chỉ cần tối ưu lượng $\sum_t E_{s_t \sim p_{\color{red}{\theta}}(s_
 
 # 4 - Kullback–Leibler divergence <span class="tex2jax_ignore">(</span>KL divergence<span class="tex2jax_ignore">)</span>
 
-Mình khuyến khích bạn đọc tìm hiểu về KL divergence tại [thetalog](https://thetalog.com/statistics/ly-thuyet-thong-tin/). Bài viết của bạn Tiến rất tuyệt vời và dễ hiểu.
+Mình khuyến khích bạn đọc tìm hiểu về KL divergence tại [thetalog](https://thetalog.com/statistics/ly-thuyet-thong-tin/), bài viết của bạn Tiến rất tuyệt vời và dễ hiểu. Một vài distance metric khác được sử dụng để đo sự khác nhau giữa 2 phân bố xác suất các bạn có thể đọc thêm tại [Lil'log](https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html).
 
-Để đo độ sai khác giữa 2 phân bố policy, ta có thể dùng KL divergence. Ta có:
+KL divergence được xem là distance metric để đo sự khác nhau giữa 2 phân bố xác suất, do đó để đo độ sai khác giữa 2 phân bố policy, ta có thể dùng KL divergence. Ta có:
 
 $$
 \begin{eqnarray}
@@ -266,7 +270,7 @@ $$
 \end{eqnarray}
 $$
 
-# 4 - Trust Region Policy Optimization <span class="tex2jax_ignore">(</span>TRPO<span class="tex2jax_ignore">)</span>
+# 5 - Trust Region Policy Optimization <span class="tex2jax_ignore">(</span>TRPO<span class="tex2jax_ignore">)</span>
 
 Tổng hợp tất cả kết quả ở trên thì:
 
@@ -297,4 +301,29 @@ Mình có thể hiểu như sau: nếu $D_{KL}$ lớn hơn $\epsilon$, constrain
 
 Thuật toán này được gọi là Trust Region vì ta chỉ thay đổi $\theta$ trong 1 miền nhỏ mà ở đó ta giả sử như phân bố của state với $\theta$ và $\theta'$ là như nhau, miền đó là miền mà ta tin tưởng là thuật toán sẽ chỉ có thể tốt lên với $\epsilon$ đủ nhỏ.
 
-# 5 - Phụ thêm:
+
+# 6 - Proximal Policy Optimization <span class="tex2jax_ignore">(</span>PPO<span class="tex2jax_ignore">)</span>
+
+# 7 - Kết bài
+Như vậy, chúng ta đã di qua phần cơ bản từ thuật toán Policy Gradient đến TRPO/PPO.
+
+Tóm gọn:
+- Policy Gradient là một thuật toán on-policy và là một stochastic policy.
+- Q-learning, DQN, DDPG là các thuật toán off-policy và là deterministic policy. $(1)$
+- TRPO/PPO là các thuật toán on-policy và là stochastic policy. $(2)$
+- Luôn có một deterministic policy tốt hơn một stochastic policy hiện có. $(3)$
+
+Xét $(2)$, một điểm bất lợi của các thuật toán on-policy như TRPO/PPO là chúng ta luôn phải sinh ra experience mới để có thể cải thiện agent.
+Nếu như chỉ có 1 environment thì agent sẽ được update rất chậm. Để tăng tốc cho TRPO/PPO thì chúng ta có 2 framework mới đó là A2C và A3C, tựu chung là cho agent chạy trên nhiều environment cùng 1 lúc để có thể thu thập nhiều sample giữa 2 lần update.
+
+Xét $(3)$, ta luôn có 1 deterministic policy tốt hơn một stochastic policy hiện có. Giả sử output của actor trong TRPO là $\mu, \sigma$ và ta sample action từ $N(\mu, \sigma)$. Một deterministic policy thì có thể xem như $\sigma = 0$, do đó nếu chúng ta train cả $\sigma$ với TRPO/PPO thì dần dần giá trị của nó sẽ tiệm cận về $0$ và gần như trở thành một deterministic policy. Khi implement thuật toán, output của TRPO/PPO là $\mu$, còn $\sigma$ thì mình tự giảm dần theo thời gian hoặc là một hằng số.
+
+DDPG hiệu quả trong việc sử dụng lại experience cũ để cải thiện mà không cần sinh mới, tuy nhiên lại không đảm bảo là thuật toán sẽ tốt hơn cụ thể một lượng bao nhiêu sau mỗi lần update. TRPO/PPO cho ta một đảm bảo về mức độ cải thiện, nhưng đòi hỏi phải sample mỗi lần update và không dùng lại được experience cũ nữa.
+
+Cả 3 thuật toán trên đều cần người dùng phải tự quyết định mức độ exploration. Bài thứ III về Soft Actor-Critic <span class="tex2jax_ignore">(</span>SAC<span class="tex2jax_ignore">)</span> sẽ giải quyết vấn đề về exploration.
+
+
+# 8 - Phụ thêm
+
+## 8.1 - Gradient, Natural Gradient và TRPO
+
