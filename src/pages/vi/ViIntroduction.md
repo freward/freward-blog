@@ -1,7 +1,7 @@
 <vue-mathjax></vue-mathjax>
 # Lời mở đầu
 
-Bên cạnh của Computer Vision, Natural Language Processing,
+Bên cạnh sự phát triển của Computer Vision, Natural Language Processing,
 các thuật toán Reinforcement Learning cũng đạt được những thành tựu đáng
 ngạc nhiên trong những năm gần đây và nhận được nhiều sự chú ý.
 Tuy nhiên, các bài hướng dẫn được tìm thấy trên mạng thường đẩy nhanh đến
