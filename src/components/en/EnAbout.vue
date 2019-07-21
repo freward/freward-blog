@@ -3,7 +3,9 @@
     <tbody>
       <tr>
         <th>1</th>
-        <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
+        <td><figure class="image is-128x128">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+            </figure>
         </td>
         <td>38</td>
         <td>23</td>
