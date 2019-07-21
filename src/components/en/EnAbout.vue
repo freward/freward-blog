@@ -1,5 +1,5 @@
 <template>
-  <table class="table">
+  <table class="table is-fluid">
     <tbody>
       <tr>
         <td><figure class="image is-256x256">
