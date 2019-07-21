@@ -1,40 +1,4 @@
 <template>
-  <figure class="image is-128x128">
-    <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-  </figure>
-
-  <table class="table">
-    <tbody>
-      <tr>
-        <td>
-            <figure class="image is-128x128">
-              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-            </figure>
-        </td>
-        <td>
-            <figure class="image is-128x128">
-              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-            </figure>
-        </td>
-        <td>
-            <figure class="image is-128x128">
-              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-            </figure>
-        </td>
-        <td>
-            <figure class="image is-128x128">
-              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-            </figure>
-        </td>
-      </tr>
-
-      <tr>
-        <td>38</td>
-        <td>38</td>
-        <td>38</td>
-        <td>38</td>
-      </tr>
-  </table>
   <table class="table">
   <thead>
     <tr>
@@ -82,7 +46,7 @@
       <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
     </tr>
   </tbody>
-</table>
+  </table>
 </template>
 
 <!---------------------------------------------------------------->
