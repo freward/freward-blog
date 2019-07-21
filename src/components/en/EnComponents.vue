@@ -37,17 +37,7 @@
                     <div class="field is-grouped">
                         <p class="control">
                             <a class="bd-tw-button button" href="https://github.com/toanngosy/">
-                                <span class="icon"><i class="fab fa-github"></i></span>
-                            </a>
-                        </p>
-                        <p class="control">
-                            <a class="bd-tw-button button" href="https://www.linkedin.com/in/sy-toan-ngo-491109bb/">
-                                <span class="icon"><i class="fab fa-linkedin"></i></span>
-                            </a>
-                        </p>
-                        <p class="control">
-                            <a class="bd-tw-button button" href="https://www.facebook.com/toanngosy/">
-                                <span class="icon"><i class="fab fa-facebook"></i></span>
+                                <span class="icon"><i class="fas fa-info"></i></span>
                             </a>
                         </p>
                     </div>
