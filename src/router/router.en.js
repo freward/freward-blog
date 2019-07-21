@@ -9,6 +9,10 @@ export default [
       children: [{
         path: '',
         component: require('../pages/en/EnIntroduction.md').default,
+        },
+        {
+        path: 'about',
+        component: require('../components/en/EnAbout.vue').default,
         }
       ],
     },
