@@ -36,18 +36,8 @@
                 <div class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">
-                            <a class="bd-tw-button button" href="https://github.com/toanngosy/">
-                                <span class="icon"><i class="fab fa-github"></i></span>
-                            </a>
-                        </p>
-                        <p class="control">
-                            <a class="bd-tw-button button" href="https://www.linkedin.com/in/sy-toan-ngo-491109bb/">
-                                <span class="icon"><i class="fab fa-linkedin"></i></span>
-                            </a>
-                        </p>
-                        <p class="control">
-                            <a class="bd-tw-button button" href="https://www.facebook.com/toanngosy/">
-                                <span class="icon"><i class="fab fa-facebook"></i></span>
+                            <a class="bd-tw-button button">
+                                <router-link to="/about"><span class="icon"><i class="fas fa-info-circle"></i></span></router-link>
                             </a>
                         </p>
                     </div>

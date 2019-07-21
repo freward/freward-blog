@@ -2,7 +2,7 @@
   <aside class="list-group">
     <ul>
       <li><router-link to="/vi" class="list-group-item" exact>Lời mở đầu</router-link></li>
-      <!--<li><router-link to="/abc" class="list-group-item" exact>Giới thiệu</router-link></li>-->
+      <li><router-link to="/vi/about" class="list-group-item" exact>Giới thiệu</router-link></li>
     </ul>
     <div class="menu">
       <p class="menu-label">RL cơ bản</p>

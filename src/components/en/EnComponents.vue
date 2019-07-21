@@ -36,8 +36,8 @@
                 <div class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">
-                            <a class="bd-tw-button button" href="https://github.com/toanngosy/">
-                                <span class="icon"><i class="fas fa-info-circle"></i></span>
+                            <a class="bd-tw-button button">
+                                <router-link to="/about"><span class="icon"><i class="fas fa-info-circle"></i></span></router-link>
                             </a>
                         </p>
                     </div>

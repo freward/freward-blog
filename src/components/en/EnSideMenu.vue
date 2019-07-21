@@ -2,7 +2,7 @@
   <aside class="list-group">
     <ul>
       <li><router-link to="/" class="list-group-item" exact>Introduction</router-link></li>
-      <!--<li><router-link to="/abc" class="list-group-item" exact>About</router-link></li>-->
+      <li><router-link to="/about" class="list-group-item" exact>About us</router-link></li>
     </ul>
     <div class="menu">
       <p class="menu-label">Theorical RL</p>
