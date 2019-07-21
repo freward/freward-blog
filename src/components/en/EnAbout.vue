@@ -2,20 +2,35 @@
   <table class="table">
     <tbody>
       <tr>
-        <td><figure class="image is-128x128">
-              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-            </figure>
-        <td><figure class="image is-128x128">
-              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+        <td><figure class="image is-256x256">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/256x256.png">
             </figure>
         </td>
-        <td><figure class="image is-128x128">
-              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+        <td><figure class="image is-256x256">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/256x256.png">
             </figure>
         </td>
-        <td><figure class="image is-128x128">
-              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+        <td><figure class="image is-256x256">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/256x256.png">
             </figure>
+        </td>
+        <td><figure class="image is-256x256">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/256x256.png">
+            </figure>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          template
+        </td>
+        <td>
+          template
+        </td>
+        <td>
+          template
+        </td>
+        <td>
+          template
         </td>
       </tr>
     </tbody>
