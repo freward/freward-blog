@@ -37,7 +37,7 @@
                     <div class="field is-grouped">
                         <p class="control">
                             <a class="bd-tw-button button" href="https://github.com/toanngosy/">
-                                <span class="icon"><i class="fas fa-info"></i></span>
+                                <span class="icon"><i class="fas fa-info-circle"></i></span>
                             </a>
                         </p>
                     </div>
