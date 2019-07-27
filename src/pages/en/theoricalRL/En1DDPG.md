@@ -60,7 +60,7 @@ In Hare Egg game, assume that we have 3 actions: go left, go right or stand stil
 Corresponding to the current state $s$ <span class="tex2jax_ignore">(</span>the position of the basket, the position of the egg falling against the basket,
 speed of eggs falling...<span class="tex2jax_ignore">)</span> we will have a probability distribution of action,
 for example $[0.1, 0.3, 0.5]$. The sum of all action probability at state $s$ is $1$, we have: $\sum_{a}\pi_\theta(a|s) = 1$.
-Let $p(s_{t+1}|a_t, s_t)$ is the probability distrubution of the next state when the agent is at state $s$ and executes an action $a$.
+Let $p(s_{t+1}|a_t, s_t)$ is the probability distribution of the next state when the agent is at state $s$ and executes an action $a$.
 
 Let $\tau = s_1, a_1, s_2, a_2,..., s_T, a_T$ is the sequence from state $s_1$ to state $s_T$. The probability of $\tau$ is likely to happen:
 
@@ -318,7 +318,7 @@ $$
 $$
 
 The objective function depends on 2 things: policy $\pi_\theta$ and value function $V^\pi$. Assuming that we have an approximation function for $V^\pi(s)$ is $V_\phi(s)$ depending on parameters $\phi$.<br/>
-We call the appromixation function for policy $\pi_\theta$ is Actor and the appromixation function for $V_\phi$ is Critic.
+We call the approximation function for policy $\pi_\theta$ is Actor and the approximation function for $V_\phi$ is Critic.
 
 # 7 - Actor-Critic Algorithm
 From REINFORCE algorithm, now we use an additional approximation function for value function $V_\phi$, changing a bit and we have:
@@ -331,7 +331,7 @@ Batch Actor-Critic:<br/>
     5. Update $\theta \leftarrow \theta  + \alpha \nabla_\theta J(\theta)$<br/>
 <br/>
 <br/>
-Above, we can represent $V_\phi(s) = r + V_\phi(s')$ according to Bellman Equation, therfore we could update the model knowing only 1 step ahead.<br/>
+Above, we can represent $V_\phi(s) = r + V_\phi(s')$ according to Bellman Equation, therefore we could update the model knowing only 1 step ahead.<br/>
 Online Actor-Critic:<br/>
     1. With policy $\pi_\theta$, execute 1 action $a \sim \pi_\theta(a|s)$ to have $(s,a,s',r)$<br/>
     2. Fit $V_\phi (s)$ avec $r + V_\phi(s')$<br/>
@@ -340,7 +340,7 @@ Online Actor-Critic:<br/>
     5. Update $\theta \leftarrow \theta  + \alpha \nabla_\theta J(\theta)$<br/>
 <br/>
 <br/>
-Thus, we update interatively both approximation functions $V_\phi$ and $\pi_\theta$.
+Thus, we update interactively both approximation functions $V_\phi$ and $\pi_\theta$.
 
 # 8 - From Stochastic Actor-Critic to Q-Learning
 Examine a policy as follow:
@@ -434,7 +434,7 @@ The DDPG algorithm is as follow:
 <br/>
 Notice in the  DDPG implementation:
 - Because actions in DDPG are always deterministic, thus to explore the environment <span class="tex2jax_ignore">(</span>we do not want the agent always exploit the best trajectory in its knowledge, there may be a better path out there<span class="tex2jax_ignore">)</span>, a small action noise will be added into the action from the agent.
-The noise in the [original paper](https://arxiv.org/abs/1509.02971) is a stochastic process named Ornstein–Uhlenbeck process <span class="tex2jax_ignore">(</span>OU process<span class="tex2jax_ignore">)</span>. The authors choosed this process because the experiments gave good result, however other experiments conducted by different groups showing that other noise such as Gaussian Noise give the same performance.
+The noise in the [original paper](https://arxiv.org/abs/1509.02971) is a stochastic process named Ornstein–Uhlenbeck process <span class="tex2jax_ignore">(</span>OU process<span class="tex2jax_ignore">)</span>. The authors chose this process because the experiments gave good result, however other experiments conducted by different groups showing that other noise such as Gaussian Noise give the same performance.
 - Implementation of action noise in the library [keras-rl](https://github.com/keras-rl/keras-rl) is OU process, however when I run, this noise is not decayed w.r.t time. Hoever, we need a big noise at the beginning <span class="tex2jax_ignore">(</span>to explore the environment<span class="tex2jax_ignore">)</span> and decrease after many episodes. This can be done if before we add the noise to the action, we multiply it with a quantity epsilon and the epsilon decays to $0$ w.r.t time.
 - Besides adding noise into the action before executing it on the environment, they also add Gaussian Noise on the node of Neural Network. Reference paper [here](https://openai.com/blog/better-exploration-with-parameter-noise/). You could find the implementation o actor network noise in this library [stable baselines](https://stable-baselines.readthedocs.io/en/master/modules/ddpg.html#action-and-parameters-noise).
 
